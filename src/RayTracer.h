@@ -76,7 +76,7 @@ bool targetViewpoint(const Eigen::Vector3f& rayo,const Eigen::Vector3f& target,c
 struct SignedIntensityOccupancyPolicy
 {
   enum OccupancyStatus { FREE = 0, OCCUPIED, UNKNOWN };
-  static const float EPS = 1e-4;
+  static constexpr float EPS = 1e-4;
 
   template <typename PointT>
   OccupancyStatus getOccupancyStatus(const PointT& p);
@@ -85,7 +85,7 @@ struct SignedIntensityOccupancyPolicy
 struct ProbabilisticOccupancyPolicy
 {
   enum OccupancyStatus { FREE = 0, OCCUPIED, UNKNOWN };
-  static const float TOLLERANCE = 0.2;
+  static constexpr float TOLLERANCE = 0.2;
 
   template <typename PointT>
   OccupancyStatus getOccupancyStatus(const PointT& p);
@@ -122,12 +122,12 @@ class PinholeRayTracer
 {
 public:
   // Default values
-  static const float RES = 0.02f;
-  static const float RANGE_MAX = 100000.0f;
-  static const float HFOV = M_PI * 160.0f / 180.0f;
-  static const float VFOV = M_PI * 160.0f / 180.0f;
-  static const int HSIZE = 6; //320;
-  static const int VSIZE = 4; //240;
+  static constexpr float RES = 0.02f;
+  static constexpr float RANGE_MAX = 100000.0f;
+  static constexpr float HFOV = M_PI * 160.0f / 180.0f;
+  static constexpr float VFOV = M_PI * 160.0f / 180.0f;
+  static constexpr int HSIZE = 6; //320;
+  static constexpr int VSIZE = 4; //240;
 
   /** Default constructor. 
    */
